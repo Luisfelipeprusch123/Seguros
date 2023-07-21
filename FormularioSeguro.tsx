@@ -7,7 +7,7 @@ const FormularioSeguro = () => {
   const [cpf, setCpf] = useState('');
   const [date, setDate] = useState('');
   const [rg, setRg] = useState('');
-
+  const [uf, setUF] = useState('');
      const handleSubmit = (event: { preventDefault: () => void; }) => {
     event.preventDefault();
     console.log('Dados enviados:', { nome, idade, endereco, cpf, date});
@@ -17,7 +17,7 @@ const FormularioSeguro = () => {
     setCpf('');
     setDate('');
     setRg('');
-     
+    setUF('');
   };
 
   function setcpf(value: string): void {
@@ -104,7 +104,19 @@ const FormularioSeguro = () => {
           onChange={(event) => setRg(event.target.value)}
           />
           </div>
-          
+
+          <div className="mb-4">
+        <label htmlFor="UF" className="block text-gray-700 font-bold mb-2">
+          uf:
+        </label>
+        <input
+          type="number"
+          id="uf"
+          className="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700"
+          value={uf}
+          onChange={(event) => setUF(event.target.value)}
+          />
+          </div>
       <button
         type="submit"
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
